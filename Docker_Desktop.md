@@ -28,6 +28,9 @@ Some of the key features of Docker Desktop include:
   
 </details>
 
+<details>
+  <summary> Configure Docker Desktop (Linux) </summary>
+
 ## Configure Docker Desktop (Linux)
 
 The Docker Seettings manu allows you to configure your Docker settings such as installation, updates, version channels, Docker Hub login, and more.
@@ -38,3 +41,26 @@ On the General tab, you can configure when to start Docker and specify other set
 - **Show weekly tips**: Displays useful advice and suggestions about using Docker.
 - **Open Docker Desktop dashboard at startup**: Auromatically opens the dashboard when starting Docker Desktop.
 - **Enable Docker Compose V1/V2 compatibility mode**: Select this option to enable the ```docker-compose``` command to use Docker Compose V2.
+
+## Advanced
+
+Advanced settings are:
+
+- **CPUs**: By default, Docker Desktop is set to use half the number of processors available on the host machine. To increase processing power, set this to a higher number; to decrease, lower the number.
+- **Memory**: By default, Docker Desktop is set to use 25% of your host's memory. To increase the RAM, set this to a higher number. To decrease it, lower the number.
+- **Swap**: Configure swap file size as needed. The default is 1GB.
+- **Disk image location**: Specify the location of the Linux volume where containers and images are stored.
+
+You can also move the disk image to a different location. If you attempt to move a disk image to a location that already has one, you get a prompt asking if you want to use the existing image or replace it.
+
+## File sharing
+
+Use File sharing to allow local directories on the Linux host to be shared with Linux containers. Thisis especially useful for editing source code in an IDE on the host while running and testing the code in a container. By default the ```/home/<user>``` directory is shared. If your project is outside this directory then it must be added to the list. Otherwise you may get ```Mounts denied``` or ```cannot start service``` errors at runtime.
+
+## Docker Engine
+
+The Docker Engine page allows you to configure the Docker deamon to determine how your containers run.
+
+Type a JSON configuration file in the box to configure the daemon settings. For a full list of options, see the Docker Engine dockerd commandline reference. 
+  
+</details>
