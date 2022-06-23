@@ -6,6 +6,9 @@
 - Docker Engine
 - Docker Compose
 
+<details>
+  <summary> Docker Overview </summary>
+
 ## Docker overview
 
 Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your infrastructure so you can deliver software quickly. With Docker, you can manage you infrastructure in the same ways you manage your applications. By taking advantage of Docker's methodologies for shipping, testing and deploying code quickly, you can significantly reduce the delay between writing code and running it production. 
@@ -32,3 +35,37 @@ Consider the following example scenario:
 - They use Docker to push their applications into a test environment and execute automated and manual tests.
 - When developers find bugs, they can fix them in the development environment and redeploy them to the test environment for testing and validation.
 - When testing in complete, getting the fix to customer is as simple as pushing the updated image to the production environment.
+  
+</details>
+
+# Docker architecture
+
+Docker uses a client-server architecture. The Docker client talks to the Docker daemon, which does the heavy lifting of building, running, and distributing you Docker containers. The Docker client and daemon can run on the same system, or you can connect a Docker client to a remote Docker daemon. The Docker client and daemon communicate using a REST API, over UNIX sockets or a network interface. Another Docker client is Docker Compose, that lets you work with applications consisting of a set of containers.
+
+<img src="" />
+
+## The Docker daemon
+
+This Docker daemon listens for Docker API requests and manage Docker objects such as images, containers, networks, and volumes. A daemon can also communicate with other daemons to manage Docker services.
+
+## The Docker client
+
+The Docker client is the primary way that many Docker users interact with Docker. When you use commands such as ```docker run```, the client sends these commands to dockerd, which carries them out. The docker commands uses the Docker API. The Docker client can communicate with more than one daemon.
+
+## Docker Desktop
+
+Docker Desktop is an easy-to-install application for your Mac or Windows (now also Linux) environment that enables you to build and share containerized applications and microservices. Docker Desktop includes the Docker daemon, the Docker client, Docker Compose, Docker Content Trust, Kubernetes, and Credential Helper. 
+
+## Docker registries 
+
+A Docker registry stores Docker images. Docker Hub is a public registry that anyone can use, and Docker is configured to look for images on Docker Hub by default. You can even run your own private registry.
+
+When you use the ```docker pull``` or ```docker run``` commands, the required images are pulled from your configured registry. When you use the ```docker push``` command, you image is pushed to your configured registry.
+
+## Docker objects
+
+When you use Docker, you are creating and using images, containers, networks, volumes, plugins, and other objects. This section is a brief overview of some of those objects.
+
+## Images
+
+An image is a read-only template with instructions for creating a Docker container. Often, an image is based on another image, with some additional customization. 
